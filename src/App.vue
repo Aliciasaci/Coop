@@ -12,3 +12,9 @@ export default{
   }
 }
 </script>
+<style lang="scss">
+html,body{
+  height : 100%;
+  background-color : #AEB6BF;
+}
+</style>

@@ -34,7 +34,7 @@ const routes = [{
             import ('../views/Conversation.vue')
     },
     {
-        path: '/deleteConversation/:id',
+        path: '/deleteConversation/:id', //changer à idConversation
         name: 'deleteConversation',
         component: () =>
             import ('../views/deleteConversation.vue')
