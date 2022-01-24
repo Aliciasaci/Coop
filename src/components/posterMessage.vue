@@ -24,7 +24,8 @@ props : ["conversation"],
                 channel_id : this.conversation.id,
                 message : this.message,
                 member_id : this.$store.state.member.id}).then(response =>{
-                    console.log(response.data);
+                   this.$bus.$emit('newMessage',response.data);
+                    this.message = "";
                 })
             }
         }

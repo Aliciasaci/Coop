@@ -40,6 +40,12 @@ const routes = [{
             import ('../views/deleteConversation.vue')
     },
     {
+        path: '/deleteMessage/:id', //changer à idConversation
+        name: 'deleteMessage',
+        component: () =>
+            import ('../views/deleteMessage.vue')
+    },
+    {
         path: '/logOut',
         name: '/logOut',
         component: () =>
@@ -50,6 +56,12 @@ const routes = [{
         name: 'Members',
         component: () =>
             import ('../views/Members')
+    },
+    {
+        path: '/profilUser',
+        name: 'profilUser',
+        component: () =>
+            import ('../views/profilUser')
     },
 ]
 

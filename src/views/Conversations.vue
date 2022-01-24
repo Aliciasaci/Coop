@@ -42,29 +42,3 @@ export default {
 
 
 
-
-
-
-
-
-
-
-  <!-- <div class="hero-body">
-    <div class="container">
-        <h1 class="title">Listes des conversations</h1>
-          <div>
-            <h4 class="title is-4">Bonjour {{ $store.state.member.fullname }}</h4>
-          </div>
-          <button><router-link to="createConversation">Créer une conversation</router-link></button>
-          <div v-for="conversation in conversations">
-              <div class="card">
-                <div class="card-content">
-                  <div class="content">
-                    Titre : {{conversation.label}}
-                    Sujet : {{conversation.topic}}
-                  </div>
-                </div>
-              </div>
-           </div>
-       </div>
-  </div> -->
