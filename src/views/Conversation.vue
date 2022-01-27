@@ -12,7 +12,7 @@
                             <h1 class="title">Liste des messages</h1>
                             <template  v-for="message in messages">
                               <div class="box" :key="message.id">
-                              <p>{{message.member_id}}</p>
+                              <p>{{auteur}}</p>
                               <p><b>{{message.message}}</b></p>
                               <p>{{message.created_at}}</p>
                               <router-link  div="box" class="button button is-dark" :to="{name : 'deleteMessage', params :{id_channel:conversation.id,id:message.id}}">Supprimer message</router-link>
@@ -35,6 +35,8 @@ export default {
        return {
           conversation : false,
           messages : [],
+          members :  this.$store.state.members,
+          auteur : '',
        }
     },
     mounted(){
@@ -43,7 +45,7 @@ export default {
          this.conversation = response.data;
           this.chargerMessage();
        })
-       this.$bus.$on('newMessage',() => {
+       this.$bus.$on('newMessage',(data) => {
           this.chargerMessage();
       }); 
     },
@@ -51,10 +53,18 @@ export default {
        chargerMessage(){
          this.$api.get(`channels/${this.conversation.id}/posts`).then(response => {
             this.messages = response.data;
-            let member_id = this.messages.member_id;
-            console.log(member_id);
          })
-      }
+      },
+      // auteurMessage(){
+      //       this.messages.forEach(message =>{
+      //          this.members.forEach(member =>{
+      //            if(message.id === member.member_id) {
+      //               this.auteur = member;
+      //               console.log(this.auteur);
+      //            }
+      //          })
+      //       })
+      // }
    }
 }
 </script>

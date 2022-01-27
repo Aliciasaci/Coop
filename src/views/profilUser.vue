@@ -1,13 +1,28 @@
 <template>
-  <h1>PROFIL USER</h1>
+  <section class="hero is-fullheight">
+    <Header />
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-7-tablet is-6-desktop is-5-widescreen">
+              <h4 class="title is-4 has-text-centered">PROFILE</h4>
+            
+              </div>
+            </div>
+          </div>
+      </div>
+  </section>
 </template>
 
 <script>
+import Header from '../components/Header.vue';
 export default {
-
+   components : {
+      Header,
+   },
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

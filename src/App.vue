@@ -1,14 +1,16 @@
 <template>
-      <router-view/>  
+      <router-view/>
 </template>
 <script>
 export default{
-  name : "app",
   mounted(){
     this.$api.get('ping').then();
     if(!this.$store.state.token){
       this.$router.push('login');
     }
+    this.$api.get('members').then(response =>{
+      this.$store.commit('members', response.data);
+    })
   }
 }
 </script>
@@ -16,5 +18,6 @@ export default{
 html,body{
   height : 100%;
   background-color : #AEB6BF;
+  
 }
 </style>

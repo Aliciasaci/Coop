@@ -13,6 +13,7 @@ export default new Vuex.Store({
     state: {
         token: '',
         member: false,
+        members: [],
     },
 
     mutations: {
@@ -22,7 +23,12 @@ export default new Vuex.Store({
         setMember(state, member) {
             state.member = member;
         },
+        members(state, members) {
+            state.members = members;
+        }
     },
-    actions: {},
+    actions: {
+
+    },
     modules: {}
 })

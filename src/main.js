@@ -19,6 +19,7 @@ Vue.prototype.$api.interceptors.request.use(function(config) {
     return config;
 })
 Vue.config.productionTip = false
+
 new Vue({
     router,
     store,

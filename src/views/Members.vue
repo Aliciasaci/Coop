@@ -6,7 +6,7 @@
           <div class="columns is-centered">
             <div class="column is-7-tablet is-6-desktop is-5-widescreen">
               <h4 class="title is-4 has-text-centered">Liste des membres</h4>
-              <div class="box" v-for="member in members">
+              <div class="box" v-for="member in $store.state.members">
                 <p><b>Email : </b> {{member.email}}</p>
                 <p><b>Pseudo : </b>{{member.fullname}}</p>
               </div>
@@ -23,18 +23,6 @@ export default {
    components : {
       Header,
    },
-  data() {
-    return {
-      members: [],
-    };
-  },
-  mounted() {
-    this.$api
-        .get('members')
-        .then((response) => {
-          this.members = response.data;
-        })
-  }
 }
 </script>
 
