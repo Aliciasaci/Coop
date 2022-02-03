@@ -5,7 +5,7 @@
       <h4 class="title is-4 has-text-centered">Mes conversations</h4>
       <div class="container">
         <div class="columns is-centered">
-          <div class="column is-9-tablet is-8-desktop is-7-widescreen">
+          <div class="column is-11-tablet is-10-desktop is-9-widescreen">
             <template v-for="conversation in conversations">
               <conversation
                 class="box"

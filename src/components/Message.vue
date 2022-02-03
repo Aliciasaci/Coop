@@ -13,8 +13,7 @@
               :to="{ name: 'Member', params: { idMember: member.id } }"
             >
               <strong>{{ member.fullname }}</strong>
-            </router-link>
-            <small>{{ member.email }}</small>
+            </router-link> <small>{{ member.email }}</small>
             <br />
             <span v-html="message.message"></span>
             <br />
