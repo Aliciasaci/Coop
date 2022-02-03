@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="media-right">
-           <button  class="button button is-success is-small" >Modifier</button>     <button @click="deleteConversation" class="button button is-danger is-small" >Supprimer</button>    
+          <button @click="deleteConversation" class="button button is-danger is-small" >Supprimer</button>    
         </div>
       </div>
       <posterMessage :conversation="conversation" />
@@ -75,11 +75,6 @@ export default {
           });
       }
     },
-    // editConversation(){
-    //   console.log("ici");
-    //    this.$api
-    //       .put(`channels/${this.conversation.id}`);
-    // }
   },
 };
 </script>

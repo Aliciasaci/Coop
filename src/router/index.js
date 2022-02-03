@@ -34,12 +34,6 @@ const routes = [{
             import ('../views/Conversation.vue')
     },
     {
-        path: '/deleteConversation/:id', //changer à idConversation
-        name: 'deleteConversation',
-        component: () =>
-            import ('../views/deleteConversation.vue')
-    },
-    {
         path: '/logOut',
         name: '/logOut',
         component: () =>
@@ -57,7 +51,6 @@ const routes = [{
         component: () =>
             import ('../views/Member.vue')
     },
-
 ]
 
 const router = new VueRouter({
