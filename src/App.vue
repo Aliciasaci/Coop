@@ -1,23 +1,65 @@
 <template>
-      <router-view/>
+  <div>
+      <router-view v-if="$store.state.ready"/>
+          <template v-else>
+              <div class="chargement has-text-light">
+                <p>Chargement, veuillez patienter</p>
+                <button class="button is-loading is-dark"></button>
+              </div>
+          </template>
+  </div>
 </template>
 <script>
-export default{
+export default {
   mounted(){
-    this.$api.get('ping').then();
+    this.$store.commit("setReady",true);
     if(!this.$store.state.token){
-      this.$router.push('login');
+      this.seConnecter();
+    }else{
+      this.$api
+      .get(`members/${this.$store.state.member.id}/signedin`)
+      .then(this.demarrer)
+      .catch(this.seConnecter);
     }
-    this.$api.get('members').then(response =>{
-      this.$store.commit('members', response.data);
-    })
+  },
+  methods : {
+    seConnecter(){
+      this.$store.commit("setToken",false);
+      this.$router.push("/Login"); 
+      this.ready();
+    },
+    ready(){
+      this.$store.commit("setReady",true);
+    },
+    demarrer(){
+    this.$api.get("membres").then((response)=>{
+      console.log(response.data);
+      this.$store.commit("setMembers",response.data);
+      this.ready();
+     });
+    }
   }
-}
+}  
 </script>
 <style lang="scss">
 html,body{
   height : 100%;
-  background-color : #AEB6BF;
-  
+  background-color : #E6E6EA;
+  .chargement{
+    position : fixed;
+    left : 50%;
+    top : 50%;
+    transform : translate(-50%,-50%);
+    text-align: center;
+    button{
+      background-color : transparent;
+    }
+  }
 }
 </style>
+
+
+
+
+
+

@@ -4,30 +4,23 @@
               <section class="section">
                       <h4 class="title is-4 has-text-centered">Détail de conversation</h4>
                         <div class="box" v-if="conversation">
-                           <p><b>{{conversation.topic}}</b></p>
-                           <p>{{conversation.label}}</p><br/>
-                              <router-link  div="box" class="button button is-dark" :to="{name : 'deleteConversation', params :{id:conversation.id}}">Supprimer</router-link>
+                           <p class="title is-4">{{conversation.topic}} <span class="tag"> {{messages.length}} message(s)</span></p>
+                           <p class="subtitle is-6 tag is-rounded is-warning">{{conversation.label}}</p><br/>
+                              <router-link  div="box" class="button button is-danger is-small" :to="{name : 'deleteConversation', params :{id:conversation.id}}">Supprimer la conversation</router-link>
                         </div>
                         <posterMessage :conversation="conversation"/>
-                            <h1 class="title">Liste des messages</h1>
+                            <h4 class="title is-4">Liste des messages</h4>
                             <template  v-for="message in messages">
-                              <div class="box" :key="message.id">
-                              <p>{{auteur}}</p>
-                              <p><b>{{message.message}}</b></p>
-                              <p>{{message.created_at}}</p>
-                              <router-link  div="box" class="button button is-dark" :to="{name : 'deleteMessage', params :{id_channel:conversation.id,id:message.id}}">Supprimer message</router-link>
-                              </div>
-                        </template>
+                             <message :message="message" :key="message.id"/>
+                            </template>
                </section>
      </div>
 </template>
 <script>
-import Header from '../components/Header.vue';
 import posterMessage from '../components/posterMessage.vue';
 import Message from '../components/Message.vue';
 export default {
    components : {
-      Header,
       posterMessage,
       Message,
    },
@@ -36,7 +29,6 @@ export default {
           conversation : false,
           messages : [],
           members :  this.$store.state.members,
-          auteur : '',
        }
     },
     mounted(){
@@ -55,22 +47,11 @@ export default {
             this.messages = response.data;
          })
       },
-      // auteurMessage(){
-      //       this.messages.forEach(message =>{
-      //          this.members.forEach(member =>{
-      //            if(message.id === member.member_id) {
-      //               this.auteur = member;
-      //               console.log(this.auteur);
-      //            }
-      //          })
-      //       })
-      // }
    }
 }
 </script>
 
-<style>
-
+<style lang="scss">
 </style>
 
 

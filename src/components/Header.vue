@@ -2,25 +2,19 @@
 <section class="hero header">
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <div class="navbar-item header-item"><b>Coop</b></div>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
+      <router-link class="navbar-item" to="/"><b>COOP</b></router-link>
     </div>
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <router-link class="navbar-item" to="profilUser"><h4 class="header-item">Profil</h4></router-link>
-        <router-link class="navbar-item" to="/"><h4 class="header-item">Mes conversations</h4></router-link>
-        <router-link class="navbar-item" to="createConversation"><h4 class="header-item">Nouvelle conversation</h4></router-link>
-        <router-link class="navbar-item" to="Members"><h4 class="header-item">Membres</h4></router-link>
+        <router-link class="navbar-item" to="/">Mes conversations</router-link>
+        <router-link class="navbar-item" to="/createConversation">Nouvelle conversation</router-link>
+        <router-link class="navbar-item" to="/Members">Membres</router-link>
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="navbar-item"><p class="header-item">connecté en tant que <b class="header-item"> {{$store.state.member.fullname}}</b></p></div>
           <div class="buttons">
-            <router-link class="navbar-item button" to="LogOut">Déconnexion</router-link>
+            <router-link class="navbar-item button is-warning" to="/logOut">Déconnexion</router-link>
           </div>
         </div>
       </div>
@@ -36,12 +30,9 @@ export default {
 
 <style lang="scss">
 .header{
-  background-color: #34495E;
+  background-color: #EAE0CC;
 }
-.header-item{
-  color : white;
-  &:hover{
-    color : black;
-  }
+.navbar-item{
+  color : rgb(53, 58, 59);
 }
 </style>

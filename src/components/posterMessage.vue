@@ -2,11 +2,12 @@
 <form class="box" @submit.prevent="poster">
       <div class="field">
           <div class="control">
-              <input type="text" class="input" v-model="message"/>
+              <h6 class="title is-6">Message </h6>
+              <input type="text" class="input" v-model="message" placeholder="tapez votre message..."/>
           </div>
       </div>
       <div class="buttons">
-          <button class="button"> Poster un message </button>
+          <button class="button is-info is-outlined"> Poster </button>
       </div>
     </form>                                                    
 </template>

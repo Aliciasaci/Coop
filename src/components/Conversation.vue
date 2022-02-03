@@ -1,8 +1,8 @@
 <template>
       <div>
-      <router-link :to="{name : 'Conversation', params :{id: conversation.id}}">
-            <p><b>{{conversation.topic}}</b></p>
-            <p>{{conversation.label}}</p>
+            <router-link :to="{name : 'Conversation', params :{id: conversation.id}}">
+            <h5 class="title is-5">{{conversation.topic}}</h5>
+            <p class="subtitle is-6 tag is-rounded is-warning">{{conversation.label}}</p>
             </router-link>
       </div>                                                            
 </template>
@@ -12,7 +12,7 @@ props : ["conversation"]
 }
 </script>
 
-<style>
+<style lang="scss">
 
 </style>
 
