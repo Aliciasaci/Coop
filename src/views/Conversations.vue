@@ -1,26 +1,30 @@
 <template>
-<div>
+  <div>
     <Header />
     <section class="section">
-                <h4 class="title is-4 has-text-centered">Mes conversations</h4>
-                  <div class="container">
-                    <div class="columns is-centered">
-                      <div class="column is-9-tablet is-8-desktop is-7-widescreen">
-                          <template v-for="conversation in conversations">
-                              <conversation class="box" :key="conversation.id" :conversation="conversation" />
-                          </template>
-                    </div>
-                  </div>
-            </div>
-  </section>
-</div>
+      <h4 class="title is-4 has-text-centered">Mes conversations</h4>
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-9-tablet is-8-desktop is-7-widescreen">
+            <template v-for="conversation in conversations">
+              <conversation
+                class="box"
+                :key="conversation.id"
+                :conversation="conversation"
+              />
+            </template>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 <script>
-import Conversation from '../components/Conversation.vue';
+import Conversation from "../components/Conversation.vue";
 export default {
-     components: {
-        Conversation,
-    },
+  components: {
+    Conversation,
+  },
   data() {
     return {
       conversations: [],
@@ -33,10 +37,4 @@ export default {
   },
 };
 </script>
-<style scoped>
-
-</style>
-
-
-
-
+<style scoped></style>

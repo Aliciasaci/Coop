@@ -1,18 +1,18 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import axios from 'axios'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+import axios from "axios";
 
 import { Outils } from "./mixins/Outils.js";
 Vue.mixin(Outils);
 
-Vue.prototype.$bus = new Vue()
+Vue.prototype.$bus = new Vue();
 
 Vue.prototype.$api = new axios.create({
     baseURL: "https://allweb.fun/coop/api/",
     params: {},
-    headers: { 'Authorization': "bdfbc0e776274ecb4bcda97bf6f8535cae1c6f6b" }
+    headers: { Authorization: "bdfbc0e776274ecb4bcda97bf6f8535cae1c6f6b" },
 });
 
 Vue.prototype.$api.interceptors.request.use(function(config) {
@@ -20,28 +20,16 @@ Vue.prototype.$api.interceptors.request.use(function(config) {
         config.params.token = store.state.token; //le token de connexion vers le compte utilisateur
     }
     return config;
-})
-Vue.config.productionTip = false
+});
+Vue.config.productionTip = false;
 
-Vue.component('Header', () =>
-    import ('@/components/Header.vue'));
-
+Vue.component("Header", () =>
+    import ("@/components/Header.vue"));
 
 new Vue({
     router,
     store,
-    render: h => h(App)
-}).$mount('#app')
-
-
-
-
-
-
-
-
-
-
-
+    render: (h) => h(App),
+}).$mount("#app");
 
 //https://eu.ui-avatars.com/
