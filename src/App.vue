@@ -32,7 +32,7 @@ export default {
       this.$store.commit("setReady",true);
     },
     demarrer(){
-    this.$api.get("membres").then((response)=>{
+    this.$api.get("members").then((response)=>{
       console.log(response.data);
       this.$store.commit("setMembers",response.data);
       this.ready();
