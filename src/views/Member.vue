@@ -83,9 +83,8 @@ export default {
         deleteMember(){
               if(confirm("êtes-vous sûre de vouloir supprimer le membre ?")){
        this.$api.delete(`members/${this.member.id}`)
-       .then(response =>{
-           //Recharger les messages :"
-            // this.$router.push("/Members");
+       .then( response =>{
+            this.$router.push("/Members");
        })
      }
    }

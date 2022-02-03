@@ -1,5 +1,7 @@
 <template>
 <section class="hero header">
+
+  <!-- rendre le header responsive -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <router-link class="navbar-item" to="/"><b>COOP</b></router-link>
