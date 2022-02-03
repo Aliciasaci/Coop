@@ -79,7 +79,6 @@ export default {
           password: this.password,
         })
         .then((response) => {
-          console.log(response);
           alert("Votre compte a bien été crée. Vous pouvez vous connecter");
           this.$router.push("/login");
           this.errorMessage = "";

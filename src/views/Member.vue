@@ -58,7 +58,6 @@ export default {
 
     //On récupère toutes les conversation, et pour chaque conversation tous ses messages, on push ensuite les messages du user acutelle dans allMessages
     this.$api.get("channels").then((response) => {
-      console.log(response.data);
       response.data.forEach((conversation) => {
         this.conversation = conversation;
         this.$api.get(`channels/${conversation.id}/posts`).then((response) => {

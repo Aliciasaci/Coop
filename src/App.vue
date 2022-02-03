@@ -33,7 +33,6 @@ export default {
     },
     demarrer() {
       this.$api.get("members").then((response) => {
-        console.log(response.data);
         this.$store.commit("setMembers", response.data);
         this.ready();
       });
