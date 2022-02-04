@@ -4,7 +4,7 @@
     <div class="hero-body">
       <div class="container">
         <div class="columns is-centered">
-          <div class="column is-7-tablet is-6-desktop is-5-widescreen">
+          <div class="column is-12-tablet is-11-desktop is-10-widescreen">
             <h4 class="title is-4 has-text-centered">Modifier la conversation</h4>
             <form class="box" @submit.prevent="editConversation">
               <div class="field">
