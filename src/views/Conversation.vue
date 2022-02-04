@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="media-right">
-          <button @click="deleteConversation" class="button button is-danger is-small" >Supprimer</button>    
+          <router-link div="box" :to="{name : 'EditConversation', params :{id: conversation.id}}" class="button is-success is-small" >Modifier</router-link>    <button @click="deleteConversation" class="button button is-danger is-small" >Supprimer</button>    
         </div>
       </div>
       <posterMessage :conversation="conversation" />

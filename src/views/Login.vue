@@ -4,6 +4,7 @@
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-6-tablet is-5-desktop is-4-widescreen">
+            <h1 class="title">COOP</h1>
             <div class="box">
               <h4 class="title is-4 has-text-centered">Se connecter</h4>
               <form @submit.prevent="loginAccount">
@@ -70,7 +71,6 @@ export default {
           password: this.password,
         })
         .then((response) => {
-          console.log(response.data);
           this.$store.commit("setToken", response.data.token);
           this.$store.commit("setMember", response.data.member);
           this.$router.push("/");
@@ -86,5 +86,9 @@ export default {
 <style scoped>
 .error-login {
   color: red;
+}
+h1 {
+  text-align: center;
+  font-family: "Abril Fatface", sans-serif;
 }
 </style>

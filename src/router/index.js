@@ -51,6 +51,12 @@ const routes = [{
         component: () =>
             import ('../views/Member.vue')
     },
+    {
+        path: '/EditConversation/:id',
+        name: 'EditConversation',
+        component: () =>
+            import ('../views/EditConversation.vue')
+    },
 ]
 
 const router = new VueRouter({

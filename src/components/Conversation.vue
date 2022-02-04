@@ -12,7 +12,7 @@
                   </div>
                   </div>
                   <div class="media-right">
-                        <a div="box" @click="deleteConversation" class="button is-danger is-small">Supprimer</a>
+                        <router-link div="box" :to="{name : 'EditConversation', params :{id: conversation.id}}" class="button is-success is-small" >Modifier</router-link>     <a div="box" @click="deleteConversation" class="button is-danger is-small">Supprimer</a>
                   </div>
             </article>    
       </transition>                                   
@@ -22,7 +22,8 @@ export default {
 props : ["conversation"],
 data() {
       return {
-            afficher : true
+            afficher : true,
+            editer : false
       }
 },
 methods : {
@@ -38,7 +39,7 @@ methods : {
          }
        })
        }
-      }
+      },
   }
 }
 </script>

@@ -4,7 +4,7 @@
   <!-- rendre le header responsive -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <router-link class="navbar-item" to="/"><b>COOP</b></router-link>
+      <router-link class="navbar-item coop" to="/"><b>COOP</b></router-link>
     </div>
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
@@ -36,5 +36,8 @@ export default {
 }
 .navbar-item{
   color : rgb(53, 58, 59);
+}
+.coop{
+    font-family: 'Abril Fatface', sans-serif;
 }
 </style>
