@@ -15,10 +15,6 @@ npm run serve
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-
 ####  Des bugs (minimes) à signaler :
 	1. Lors de la suppression d'un membre, il faut recharger la page pour constater le changement.
 	
@@ -26,3 +22,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 #### Fonctionnalitées facultatives manquantes : 
 	1. La modification de messages
 	2. Cliquer sur le message depuis la fiche du membre permet d'arriver sur la conversation correspondante, avec le message concerné en contexte
+
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
